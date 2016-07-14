@@ -1,0 +1,67 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.text-center {
+  padding-top: 20px;
+}
+.col-xs-12 {
+  background-color: #fff;
+}
+#toolbar {
+  margin-bottom: 10px;
+}
+#toolbar .btn-group > select {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 4px 8px;
+  height: 28px;
+  float: left;
+  /*width: inherit;*/
+  width: 70px;
+}
+#toolbar .btn-group > label {
+  line-height: 28px;
+}
+#toolbar .btn-group input[type=checkbox] {
+  display: none;
+}
+#toolbar .btn-group > input[type=checkbox] + label {
+  color: #AAA;
+}
+#toolbar .btn-group > input[type=checkbox]:checked + label {
+  content: "Locked";
+  color: black;
+}
+#toolbar .btn-group > label {
+  padding-left: 5px;
+}
+#toolbar .btn-group > .controlpoint {
+  float: left;
+  width: 75px;
+  height: 28px;
+}
+#toolbar .btn-group > .controlpoint.controlpoint_x {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+#toolbar .btn-group > .controlpoint.controlpoint_y {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#sidebar {
+  height: 100%;
+  padding-right: 0;
+  padding-top: 20px;
+}
+#sidebar .nav {
+  width: 95%;
+}
+#sidebar li {
+  border: 0 #f2f2f2 solid;
+  border-bottom-width: 1px;
+}
+canvas {
+  border: 2px solid #DDD;
+}

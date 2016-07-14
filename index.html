@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-left">
+
+                <!-- sidebar -->
+                <div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                    <div class="row">
+                        <h1>Op Mango</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="axisLabel-x">X Axis</label>
+                            <input name="axisLabel-x" type="text" class="form-control" onchange="demetriGraphs.content.updateAxisLabel('x', this.value)"
+                            value="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <label for="axisLabel-y">Y Axis</label>
+                            <input name="axisLabel-y" type="text" class="form-control" onchange="demetriGraphs.content.updateAxisLabel('y', this.value)"
+                            value="">
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>DEV BUTTONS</p>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="btn-group" role="group" aria-label="...">
+                                <button class="btn btn-default" onclick="demetriGraphs.content.smoothen()">Smooth</button>
+                                <button class="btn btn-default" onclick="demetriGraphs.content.showAnchorPoints()">Show Anchors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8">
+                    <div id="toolbar" class="navbar-default row">
+                        <div class="col-xs-12">
+                            <div class="btn-toolbar" role="toolbar" aria-label="...">
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button class="btn btn-default" onclick="demetriGraphs.content.startFresh()"><span class="glyphicon glyphicon-off" title="Start Fresh"></span></button>
+                                    <button class="btn btn-default" onclick="demetriGraphs.content.undo()"><span class="glyphicon glyphicon-repeat" title="Undo"></span></button>
+                                    <button class="btn btn-default" onclick="demetriGraphs.content.saveGraph()"><span class="glyphicon glyphicon-floppy-disk" title="Save your work"></span></button>
+                                </div>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <button class="btn btn-default" onclick="demetriGraphs.content.addSegment()"><span class="glyphicon glyphicon-plus"></span> </button>
+                                    <button class="btn btn-default" onclick="demetriGraphs.content.deleteLastSegment()"><span class="glyphicon glyphicon-minus"></span></button>
+                                </div>
+                                <div class="btn-group" role="group" aria-label="...">
+                                    <select id="selectedSegmentDropdown" class="form-control" name="selectedSegment" id="" onchange="demetriGraphs.content.selectSegment(this.options[this.selectedIndex].value)">
+
+                                    </select>
+                                    <input type="checkbox" value="" id="locked" name="locked" onchange="demetriGraphs.content.lockSelection()" />
+                                    <label class="checkbox-inline" for="locked"><span class="glyphicon glyphicon-lock"></span>Lock</label>
+                                </div>
+                                <div class="btn-group" role="group" aria-label="Control Point Values">
+                                    <input type="number" id="controlpoint0_x" class="controlpoint_x controlpoint form-control" value="" oninput="demetriGraphs.content.controlPointInputUpdated(this.id, this.value)"
+                                    />
+                                    <input type="number" id="controlpoint0_y" class="controlpoint_y controlpoint form-control" value="" oninput="demetriGraphs.content.controlPointInputUpdated(this.id, this.value)"
+                                    />
+                                </div>
+                                <div class="btn-group" role="group" aria-label="Control Point Values">
+                                    <input type="number" id="controlpoint1_x" class="controlpoint_x controlpoint form-control" value="" oninput="demetriGraphs.content.controlPointInputUpdated(this.id, this.value)"
+                                    />
+                                    <input type="number" id="controlpoint1_y" class="controlpoint_y controlpoint form-control" value="" oninput="demetriGraphs.content.controlPointInputUpdated(this.id, this.value)"
+                                    />
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="graphContainer">
+                        <div class="col-xs-12" id="graphArea">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>Created By <a href="http://raphistein.com">RAPHI STEIN</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img id="demetriGraphsLogo" style="display: none" src="img/dg2.png" />
+    <script language="javascript" type="text/javascript" src="dist.js"></script>
+    
+    <script language="javascript" type="text/javascript" src="vendor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
+    <!-- uncomment lines below to include extra p5 libraries -->
+    <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
+    <!--<script language="javascript" src="libraries/p5.sound.js"></script>-->
+    
+</body>
+
+</html>
